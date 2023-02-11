@@ -1,0 +1,17 @@
+.logo img{
+    height: 150px;
+}
+
+.row h1 {
+    margin-top: 20px;
+}
+.full-width {
+    width: 100%;
+}
+.contaier button {
+    padding: 10px 30px;
+    margin: 10px 30px;
+}
+.mat{
+    padding: 20px 40px;
+}

@@ -1,0 +1,50 @@
+<h2>Adding Question to {{ qTitle }}</h2>
+
+<div class="boostrap-Wrapper">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="container text-center">
+        <button color="primary" mat-raised-button [routerLink]="'/admin/add-question/'+ qId +'/'+ qTitle">Add Question</button>
+      </div>
+
+      <mat-card *ngFor="let q of questions; let i = index" class="mt15">
+        <mat-card-content>
+          <p>
+            <b>{{ i + 1 }}.</b>
+            <span class="ml15" [innerHTML]="q.content"></span>
+          </p>
+
+          <div class="containee-fluid">
+            <div class="row">
+              <div class="col-md-6">
+                <p><b>(1) </b>{{ q.option1 }}</p>
+              </div>
+
+              <div class="col-md-6">
+                <p><b>(2) </b>{{ q.option2 }}</p>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="col-md-6">
+                <p><b>(3) </b> {{ q.option3 }}</p>
+              </div>
+
+              <div class="col-md-6">
+                <p><b>(4) </b>{{ q.option4 }}</p>
+              </div>
+            </div>
+
+            <p>
+              Correct Answer: <b>{{ q.answer }}</b>
+            </p>
+          </div>
+        </mat-card-content>
+        <mat-card-actions>
+          <button class="mr15" mat-raised-button color="warn" (click)="deleteQuestion(q.quesId)">Delete</button>
+          <button [routerLink]="'/admin/question/' + q.quesId"mat-raised-button color="primary" type="submit">Update</button>
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</div>

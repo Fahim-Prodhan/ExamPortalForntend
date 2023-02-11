@@ -1,0 +1,17 @@
+.example-header-image {
+    background-image: url(../../../../assets/exam.png) ;
+    background-size: cover;
+  }
+  .truncate {
+    display: block;
+    white-space: nowrap;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .text-center{
+    color: #332FD0;
+  }
+  .color {
+    color: red;
+  }

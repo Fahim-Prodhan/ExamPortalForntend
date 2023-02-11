@@ -1,0 +1,16 @@
+.example-header-image {
+    background-image: url(../../../../assets/exam.png) ;
+    background-size: cover;
+  }
+  .list_item {
+    margin-left: 10px;
+    
+}
+mat-list-item {
+    margin-top: 30px;
+}
+.icon {
+    padding-top: 4px;
+    margin-right: 10px;
+}
+

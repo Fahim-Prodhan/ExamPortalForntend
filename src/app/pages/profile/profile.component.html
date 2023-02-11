@@ -1,0 +1,48 @@
+<mat-card>
+    <mat-card-content>
+        <h1>Your Profile Detail</h1>
+        <!-- {{user | json}} -->
+        <div class="bootstrap-wrapper">
+            <div class="container">
+                <div class="container text-center">
+                    <img src="https://ca.slack-edge.com/T0266FRGM-U2Q173U05-g863c2a865d7-512" alt=""
+                        class="profile-image ">
+                    <h1 style="margin: 20px 0px;">{{login.getUser().firstName}} {{login.getUser().lastName}}</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <!--Table Detail -->
+                        <table class="table text-center">
+                            <tr>
+                                <td>Username</td>
+                                <td>
+                                    {{login.getUser().username}}
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Userid</td>
+                                <td>Exam{{login.getUser().id}}</td>
+                            </tr>
+                            <tr *ngIf="login.getUser().phone"> // if number will null then table will vanish
+                                <td >Phone</td>
+                                <td>{{login.getUser().phone}}</td>
+                            </tr>
+                            <tr>
+                                <td>Role</td>
+                                <td>{{login.getUser().authorities[0].authority}}</td>
+                            </tr>
+                            <tr>
+                                <td>Status</td>
+                                <td>{{login.getUser().enabled?"Active":"Not Active"}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </mat-card-content>
+    <!-- <mat-card-actions class="center">
+        <button mat-raised-button color="primary">Update</button>
+        <button mat-stroked-button color="accent">Accent</button>
+      </mat-card-actions> -->
+</mat-card>

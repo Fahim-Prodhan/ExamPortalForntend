@@ -1,0 +1,14 @@
+.list_item {
+    margin-left: 10px;
+    
+}
+mat-list-item {
+    margin-top: 30px;
+}
+.icon {
+    padding-top: 4px;
+    margin-right: 10px;
+}
+.mt15{
+    padding-bottom: 10px;
+}

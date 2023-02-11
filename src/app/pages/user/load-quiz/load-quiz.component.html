@@ -1,0 +1,45 @@
+<div class="boostrap-wrapper">
+  <div class="container-fluid">
+    <mat-card *ngIf="quizzes.length!=0" class="mb15 mt15" style="padding-top: 15px">
+      <h1 class="text-center">Avaiable Quizzes</h1>
+    </mat-card>
+    <div class="row" *ngIf="quizzes">
+      <div class="col-md-4" *ngFor="let q of quizzes">
+        <mat-card style="padding-bottom: 15px">
+          <mat-card-title style="padding-left: 10px;">
+            {{ q.title }}
+          </mat-card-title>
+
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-subtitle>
+              {{ q.category.title }}
+            </mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content class="mb15">
+            <p class="truncate">{{ q.description }}</p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button 
+            [routerLink]="'/user-dashboard/instructions/'+ q.qId"
+            mat-raised-button color="accent">Start</button>
+            <button class="ml15" mat-stroked-button>
+              Max Marks: {{ q.maxMarks }}
+            </button>
+            <button class="ml15" mat-stroked-button>
+              Question: {{ q.numberOfQuestions }}
+            </button>
+          </mat-card-actions>
+        </mat-card>
+      </div>
+      <div class="col-md-12" *ngIf="quizzes.length==0" >
+        <mat-card >
+          <mat-card-content>
+            <h1 class="text-center color">No Data is Avaiable</h1>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- {{quizzes | json}} -->
